@@ -1,0 +1,11 @@
+{
+	"id": "newsroom-connector",
+	"name": "Newsroom Connector",
+	"version": "1.0.0",
+	"minAppVersion": "0.1.0",
+	"description": "",
+	"author": "Prompt Mixer",
+	"authorUrl": "",
+	"fundingUrl": "",
+	"isDesktopOnly": true
+}
