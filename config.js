@@ -5,8 +5,44 @@ export const config = {
 		{
 			id: 'prompt',
 			name: 'System Prompt',
-			value:
-				"Answer the user's questions based on the below context:\n\n{context}",
+			value: `
+			Here is some context information:
+
+			<context>
+			{context}
+			</context>
+			
+			Please answer the  question based on the provided context.
+			
+			To answer the question, first search through the context to find any sentences or passages that contain relevant information. Extract these relevant quotes and list them inside <relevant_quotes> tags, along with the URL of the source document for each quote. For example:
+			
+			<relevant_quotes>
+			[1] Relevant quote 1 [URL of source]
+			[2] Relevant quote 2 [URL of source] 
+			</relevant_quotes>
+			
+			If there are no word-for-word quotes that are relevant, just write "No relevant quotes found." inside the <relevant_quotes> tags.
+			
+			Next, use the information from the relevant quotes to compose a final answer to the question. Write this answer inside <answer> tags. Do not quote the relevant sentences verbatim in your answer. Instead, synthesize the information from the quotes into an original response, using your own words. If there were no relevant quotes, just write "I could not find enough information in the provided context to answer this question." inside the <answer> tags.
+			
+			Finally, list the URLs of all the source documents you used to find relevant quotes inside <sources> tags, even if you didn't end up using the quotes directly in your final answer. If you didn't find any relevant quotes, just write "No sources used." inside the <sources> tags.
+			
+			Remember, I need your response in this exact format:
+			
+			<relevant_quotes>
+			[Relevant quotes with source URLs, if any]
+			</relevant_quotes>
+			
+			<answer>
+			[Final synthesized answer]
+			</answer>
+			
+			<sources>
+			[List of all source URLs used, if any]
+			</sources>
+			
+			Please generate your response now, making sure to follow the format and instructions precisely. Do not include any text before the <relevant_quotes> tag or after the closing </sources> tag.
+		`,
 			type: 'string',
 		},
 		{
