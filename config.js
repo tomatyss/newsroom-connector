@@ -1,6 +1,6 @@
 export const config = {
 	connectorName: 'Newsroom Connector',
-	models: ['gpt-4-0125-preview', 'gpt-3.5-turbo-0125'],
+	models: ['gpt-4o', 'gpt-4-turbo', 'gpt-3.5-turbo', 'claude-3-haiku-20240307'],
 	properties: [
 		{
 			id: 'prompt',
